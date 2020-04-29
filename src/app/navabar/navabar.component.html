@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Ramdan Cart</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="home">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="shoppingCart">Shopping Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="products">Products</a>
+      </li>
+      <li ngbDropdown class="nav-item dropdown" *ngIf="auth.user$ | async as user  ; else anonymouser">
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle id="dropdown01" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">{{user?.displayName}}</a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" ngbDropdownItem routerLink="my/orders">My Orders</a>
+          <a class="dropdown-item" ngbDropdownItem routerLink="admin/orders">Manage Orders</a>
+          <a class="dropdown-item" ngbDropdownItem routerLink="admin/products">Manage Products</a>
+          <a class="dropdown-item" ngbDropdownItem (click)="logOut()">Log Out</a>
+        </div>
+      </li>
+      <ng-template #anonymouser>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</nav>

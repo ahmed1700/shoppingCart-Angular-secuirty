@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ramdan-shopping-cart": {
+      "hosting": {
+        "shopping-cart": [
+          "ramdan-shopping-cart"
+        ]
+      }
+    }
+  }
+}
