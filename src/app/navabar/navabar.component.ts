@@ -7,9 +7,12 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./navabar.component.css']
 })
 export class NavabarComponent {
-
+  appUser;
   constructor(public auth: AuthService) {
-
+    this.auth.getApp.subscribe(user => {
+      console.log(user);
+      this.appUser = user;
+    })
   }
 
   logOut() {

@@ -8,8 +8,6 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'shopping-cart';
-
   constructor(private userService: UserService, public auth: AuthService, private route: ActivatedRoute, private router: Router) {
     this.auth.user$.subscribe(user => {
       if (user) {
