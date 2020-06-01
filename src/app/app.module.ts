@@ -19,6 +19,9 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
+import { ProductCardComponent } from './shared/product-card/product-card.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     MyOrderComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    NgbModule
+    NgbModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,6 +23,7 @@ export class AuthService implements OnDestroy {
   ngOnDestroy() {
 
   }
+
   get getApp(): Observable<any> {
     return this.user$.pipe(switchMap(user => {
       if (user) {

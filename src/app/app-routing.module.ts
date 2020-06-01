@@ -12,12 +12,13 @@ import { AdminGuardService } from './services/guard/admin-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', redirectTo: '' },
   { path: 'products', component: ProductsComponent },
+  { path: '', component: ProductsComponent },
+  { path: 'home', component: ProductsComponent },
   { path: 'shoppingCart', component: ShoppingCartComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin/prodcut/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminGuardService] },
+  { path: 'admin/product/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminGuardService] },
+  { path: 'admin/product/:id', component: ProductFormComponent, canActivate: [AuthGuardService, AdminGuardService] },
   { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuardService, AdminGuardService] },
   { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminGuardService] },
   { path: 'my/orders', component: MyOrderComponent, canActivate: [AuthGuardService] },

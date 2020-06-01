@@ -9,7 +9,9 @@ import { map } from 'rxjs/operators';
 })
 export class AdminGuardService implements CanActivate {
 
-  constructor(private auth: AuthService, private userSvr: UserService) { }
+
+  // 
+  constructor(private auth: AuthService) { }
   canActivate() {
     return this.auth.getApp.pipe(map(appuser => appuser.isAdmin));
   }
